@@ -54,11 +54,8 @@ $client->disconnect();
 unset($client);
 
 
-function connect($r) {
-    echo "I got code {$r}\n";
-//    global $client;
-//    global $topic;
-//    $client->subscribe($topic, 1);
+function connect() {
+    echo "connected\n";
 }
 
 function subscribe() {

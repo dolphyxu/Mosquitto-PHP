@@ -6,8 +6,8 @@
  * Time: 下午5:31
  */
 
-include "SubClient.php";
-include "PubClient.php";
+include "../controller/SubClient.php";
+include "../controller/PubClient.php";
 
 
 $operation = $argv[1];

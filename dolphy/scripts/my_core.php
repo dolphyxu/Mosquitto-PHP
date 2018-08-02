@@ -6,7 +6,7 @@
  * Time: 下午5:15
  */
 
-$core_path = '/home/dol/pro/openxdagpool-scripts/www_scripts/mqtta.php';
+$core_path = 'mqtt.php';
 
 
 //$param_arr = getopt('a:b:c:');
@@ -28,6 +28,5 @@ if ($operation == 'sub') {
 } else if ($operation == 'pub') {
     $cmd = "php " . $core_path . " pub " . $topic . " " . $message;
 }
-
 
 exec($cmd, $result, $ret);

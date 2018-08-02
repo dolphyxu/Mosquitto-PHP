@@ -32,7 +32,11 @@ class MQTTClient
             printf("Subscribed to a topic: %s\n", $this->topic);
         });
         $this->client->onMessage(function ($message) {
-            printf("Got a message on topic %s with payload:\n%s\n\n", $message->topic, $message->payload);
+            printf("Got a message on topic %s with payload:\n%s\n", $message->topic, $message->payload);
+            $sub_file = fopen("msg.txt", "a");
+            $msg = "Got a message on topic ".$message->topic." with payload: ".$message->payload."\n";
+            fwrite($sub_file, $msg);
+            fclose($sub_file);
         });
     }
 }
