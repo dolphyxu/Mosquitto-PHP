@@ -1,6 +1,8 @@
 <?php
 
+echo '000';
 $client = new Mosquitto\Client();
+echo '111';
 $client->onConnect('connect');
 $client->onDisconnect('disconnect');
 $client->onSubscribe('subscribe');

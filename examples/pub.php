@@ -8,12 +8,15 @@ $client->onMessage('message');
 $client->connect("localhost", 1883, 5);
 $client->subscribe('/#', 1);
 
-while (true) {
+$num = 0;
+
+while ($num<10) {
 	$client->loop();
-	$mid = $client->publish('/hello', "Hello from PHP at " . date('Y-m-d H:i:s'), 1, 0);
+	$mid = $client->publish('mqtt', "Hello from PHP at " . date('Y-m-d H:i:s'), 1, 0);
 	echo "Sent message ID: {$mid}\n";
 	$client->loop();
 
+	$num++;
 	sleep(2);
 }
 
