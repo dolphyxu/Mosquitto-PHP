@@ -24,9 +24,9 @@ if ($operation=='pub' && $argc>3) {
 
 
 if ($operation == 'sub') {
-    $cmd = "php " . $core_path . " sub " . $topic;
+    $cmd = "nohup php " . $core_path . " sub " . $topic . ">/dev/null 2>/dev/null &";
 } else if ($operation == 'pub') {
     $cmd = "php " . $core_path . " pub " . $topic . " " . $message;
 }
-
+echo $cmd."\n";
 exec($cmd, $result, $ret);
